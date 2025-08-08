@@ -371,10 +371,10 @@ export default function SpeechToTextApp() {
                     <CardContent>
                         <ol className="list-decimal list-inside space-y-2 text-gray-700">
                             <li>Select your preferred language from the dropdown above</li>
-                            <li>Click &quotStart Recording&quot and allow microphone access when prompted</li>
+                            <li>Click &quot;Start Recording&quot; and allow microphone access when prompted</li>
                             <li>Speak clearly into your microphone</li>
                             <li>Your speech will be converted to text in real-time</li>
-                            <li>Click &quotStop Recording&quot when finished</li>
+                            <li>Click &quot;Stop Recording&quot; when finished</li>
                             <li>Use the Copy or Download buttons to save your transcript</li>
                         </ol>
                     </CardContent>
