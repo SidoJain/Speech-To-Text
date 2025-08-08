@@ -50,10 +50,10 @@ interface SpeechRecognition extends EventTarget {
     start(): void
     stop(): void
     abort(): void
-    onstart: ((this: SpeechRecognition, ev: Event) => any) | null
-    onend: ((this: SpeechRecognition, ev: Event) => any) | null
-    onresult: ((this: SpeechRecognition, ev: SpeechRecognitionEvent) => any) | null
-    onerror: ((this: SpeechRecognition, ev: SpeechRecognitionErrorEvent) => any) | null
+    onstart: ((this: SpeechRecognition, ev: Event) => void) | null
+    onend: ((this: SpeechRecognition, ev: Event) => void) | null
+    onresult: ((this: SpeechRecognition, ev: SpeechRecognitionEvent) => void) | null
+    onerror: ((this: SpeechRecognition, ev: SpeechRecognitionErrorEvent) => void) | null
 }
 
 declare global {
@@ -153,7 +153,7 @@ export default function SpeechToTextApp() {
             setError("")
             recognitionRef.current.lang = selectedLanguage
             recognitionRef.current.start()
-        } catch (err) {
+        } catch {
             setError("Microphone access denied. Please allow microphone access and try again.")
         }
     }
@@ -371,10 +371,10 @@ export default function SpeechToTextApp() {
                     <CardContent>
                         <ol className="list-decimal list-inside space-y-2 text-gray-700">
                             <li>Select your preferred language from the dropdown above</li>
-                            <li>Click "Start Recording" and allow microphone access when prompted</li>
+                            <li>Click &quotStart Recording&quot and allow microphone access when prompted</li>
                             <li>Speak clearly into your microphone</li>
                             <li>Your speech will be converted to text in real-time</li>
-                            <li>Click "Stop Recording" when finished</li>
+                            <li>Click &quotStop Recording&quot when finished</li>
                             <li>Use the Copy or Download buttons to save your transcript</li>
                         </ol>
                     </CardContent>
